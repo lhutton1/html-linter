@@ -17,14 +17,14 @@ from setuptools import setup, find_packages
 
 setup(
     name='html-linter',
-    version='0.1.5',
+    version='0.1.6',
     description='Lints an HTML5 file using Google\'s style guide',
     long_description=open('README.rst').read(),
     author='Sebastian Kreft - Deezer',
     author_email='skreft@deezer.com',
     url='http://github.com/deezer/html-linter',
     py_modules=['html_linter'],
-    install_requires=['template-remover', 'docopt==0.6.1'],
+    install_requires=['template-remover', 'docopt>=0.6.1'],
     tests_require=['nose>=1.3'],
     scripts=['scripts/html_lint.py'],
     classifiers=[
