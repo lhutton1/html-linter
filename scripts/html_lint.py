@@ -80,7 +80,7 @@ _DISABLE_MAP = {
 }
 
 
-__VERSION__ = '0.1'
+__VERSION__ = '0.1.8'
 
 
 def main():
@@ -106,9 +106,14 @@ def main():
 
     exclude = [_DISABLE_MAP[d] for d in disable if d in _DISABLE_MAP]
     clean_html = template_remover.clean(io.open(options['FILENAME']).read())
-    print(html_linter.lint(clean_html, exclude=exclude))
+    results = html_linter.lint(clean_html, exclude=exclude)
+
+    if results:
+        print(results)
+        return 2
 
     return 0
+
 
 if __name__ == '__main__':
     sys.exit(main())
