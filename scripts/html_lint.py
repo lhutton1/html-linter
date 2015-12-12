@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # Copyright 2014 Deezer (http://www.deezer.com)
+# Copyright 2015 Sebastian Kreft
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -80,7 +81,7 @@ _DISABLE_MAP = {
 }
 
 
-__VERSION__ = '0.1.8'
+__VERSION__ = '0.2.0'
 
 
 def main():
