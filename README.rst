@@ -4,11 +4,11 @@ HTML Linter
 .. image:: https://badge.fury.io/py/html-linter.png
     :target: http://badge.fury.io/py/html-linter
 
-.. image:: https://travis-ci.org/deezer/html-linter.png?branch=master
-    :target: https://travis-ci.org/deezer/html-linter
+.. image:: https://travis-ci.org/sk-/html-linter.png?branch=master
+    :target: https://travis-ci.org/sk-/html-linter
 
-.. image:: https://coveralls.io/repos/deezer/html-linter/badge.png?branch=master
-    :target: https://coveralls.io/r/deezer/html-linter?branch=master
+.. image:: https://coveralls.io/repos/sk-/html-linter/badge.png?branch=master
+    :target: https://coveralls.io/r/sk-/html-linter?branch=master
 
 
 HTML Linter is an HTML5 linter that follows the style guide defined by Google.
@@ -24,7 +24,7 @@ That's why we decided to have an automated tool to check our coding standard.
 
 We start with the
 `Google standard <https://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml>`_
-and we enhance it with some extra rules deinfed by the project
+and we enhance it with some extra rules defined by the project
 `html-minifier <https://github.com/kangax/html-minifier>`_. You can read his
 detailed `article <http://perfectionkills.com/experimenting-with-html-minifier/#remove_redundant_attributes>`_.
 
@@ -37,14 +37,14 @@ The list of extra rules we added are:
 * Javascript:void(0) links are evil.
 * onclick='javascript: ...' is not required. This will raise also a Concerns Separation error.
 * meta http-equiv: use only standard properties + X-UA-compatible
-* No extra whitespaces between attributes or before the opening or closing tag.
+* No extra white-spaces between attributes or before the opening or closing tag.
 
 What is missing?
 ----------------
 
 Check if the file has BOM.
 
-The abbility to validate the HTML using the tool
+The ability to validate the HTML using the tool
 `HTML5 tidy <https://w3c.github.io/tidy-html5/>`_ and to integrate some
 schema.org or microdata validator.
 
