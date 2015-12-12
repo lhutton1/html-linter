@@ -1,4 +1,5 @@
 # Copyright 2014 Deezer (http://www.deezer.com)
+# Copyright 2015 Sebastian Kreft
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,9 +21,9 @@ setup(
     version='0.1.9',
     description='Lints an HTML5 file using Google\'s style guide',
     long_description=open('README.rst').read(),
-    author='Sebastian Kreft - Deezer',
-    author_email='skreft@deezer.com',
-    url='http://github.com/deezer/html-linter',
+    author='Sebastian Kreft',
+    author_email='skreft@gmail.com',
+    url='http://github.com/sk-/html-linter',
     py_modules=['html_linter'],
     install_requires=['template-remover', 'docopt>=0.6.1'],
     tests_require=['nose>=1.3'],
