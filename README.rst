@@ -1,13 +1,13 @@
 HTML Linter
 ===========
 
-.. image:: https://badge.fury.io/py/html-linter.png
+.. image:: https://badge.fury.io/py/html-linter.svg
     :target: http://badge.fury.io/py/html-linter
 
-.. image:: https://travis-ci.org/sk-/html-linter.png?branch=master
+.. image:: https://api.travis-ci.org/sk-/html-linter.svg?branch=master
     :target: https://travis-ci.org/sk-/html-linter
 
-.. image:: https://coveralls.io/repos/sk-/html-linter/badge.png?branch=master
+.. image:: https://coveralls.io/repos/sk-/html-linter/badge.svg?branch=master
     :target: https://coveralls.io/r/sk-/html-linter?branch=master
 
 
