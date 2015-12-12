@@ -1,4 +1,5 @@
 # Copyright 2014 Deezer (http://www.deezer.com)
+# Copyright 2015 Sebastian Kreft
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -30,6 +31,11 @@ try:
     import HTMLParser
 except ImportError:
     import html.parser as HTMLParser
+
+# Python 2 and Pypy HTMLParser modules do not have attrfind_tolerant
+if not hasattr(HTMLParser, 'attrfind_tolerant'):
+    HTMLParser.attrfind_tolerant = HTMLParser.attrfind
+
 import re
 import sys
 
@@ -461,7 +467,7 @@ def get_attribute_line_column(tag_definition, line, column, attribute):
     Return:
        A (line, column) tuple representing the position of the attribute.
     """
-    for match in HTMLParser.attrfind.finditer(tag_definition):
+    for match in HTMLParser.attrfind_tolerant.finditer(tag_definition):
         if match.group(1).lower() == attribute:
             return get_line_column(tag_definition, line, column, match.start(1))
 
@@ -480,7 +486,7 @@ def get_value_line_column(tag_definition, line, column, attribute):
     Return:
        A (line, column) tuple representing the position of the value.
     """
-    for match in HTMLParser.attrfind.finditer(tag_definition):
+    for match in HTMLParser.attrfind_tolerant.finditer(tag_definition):
         if match.group(1).lower() == attribute:
             if not match.group(3):
                 pos = match.end(1)
@@ -525,6 +531,10 @@ class HTML5Linter(HTMLParser.HTMLParser):
         # In case we are dealing with Python 3, set it to non-strict mode.
         if hasattr(self, 'strict'):
             self.strict = False
+
+        # Python 3.5 sets convert_charrefs to True by default
+        if hasattr(self, 'convert_charrefs'):
+            self.convert_charrefs = False
 
         self.feed(html)
         self.close()
@@ -797,7 +807,8 @@ class HTML5Linter(HTMLParser.HTMLParser):
 
     def _check_attributes_case_quotation_entities(self, tag, unused_attrs):
         original_def = self.get_starttag_text()
-        for match in HTMLParser.attrfind.finditer(original_def, len(tag) + 1):
+        for match in HTMLParser.attrfind_tolerant.finditer(original_def,
+                                                           len(tag) + 1):
             # We do not use islower() due to http://bugs.python.org/issue13822.
             if match.group(1) != match.group(1).lower():
                 line, column = self.get_attribute_line_column(

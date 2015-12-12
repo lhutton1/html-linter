@@ -18,7 +18,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='html-linter',
-    version='0.1.9',
+    version='0.2.0',
     description='Lints an HTML5 file using Google\'s style guide',
     long_description=open('README.rst').read(),
     author='Sebastian Kreft',
@@ -39,6 +39,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Software Development',
     ],
