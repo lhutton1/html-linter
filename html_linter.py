@@ -1074,6 +1074,7 @@ def main(options):
     if sys.version_info[0] < 3:
         sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
 
+    print_filename = options.get('--printfilename')
     disable_str = options.get('--disable') or ''
     disable = disable_str.split(',')
 
@@ -1093,6 +1094,8 @@ def main(options):
         clean_html = template_remover.clean(io.open(filename).read())
         result = lint(clean_html, exclude=exclude)
         if result:
+            if print_filename:
+                result = "{}:{}".format(filename, result)
             print(result)
             results = True
 

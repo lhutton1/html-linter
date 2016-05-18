@@ -606,6 +606,14 @@ class TestHTML5LinterMain(unittest.TestCase):
         output, exit_code = self.call_main(**{'--disable': 'foobar'})
         self.assertEquals(exit_code, 1)
 
+    def test_printfilename(self):
+        files = [self.more_invalid]
+        output, exit_code = self.call_main(
+            **{'FILENAME': files, '--printfilename': True})
+        self.assertEquals(1, len(output))
+        self.assertTrue(self.more_invalid in output[0])
+        self.assertEquals(exit_code, 2)
+
 
 class TestHTML5LinterUtils(unittest.TestCase):
     @staticmethod
