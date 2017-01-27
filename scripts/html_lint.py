@@ -25,7 +25,7 @@ https://github.com/kangax/html-minifier.
 This software is released under the Apache License. Copyright Deezer 2014.
 
 Usage:
-  html5_lint.py [--disable=DISABLE] FILENAME...
+  html5_lint.py [--disable=DISABLE] [--printfilename] FILENAME...
   html5_lint.py (-h | --help)
   html5_lint.py --version
 
@@ -39,6 +39,7 @@ Options:
                    capitalization, quotation, indentation, formatting,
                    boolean_attribute, invalid_attribute, void_zero,
                    invalid_handler, http_equiv, extra_whitespace.
+  --printfilename  Include the filename when printing the results
 
 """
 
