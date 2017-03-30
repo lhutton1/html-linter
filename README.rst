@@ -117,11 +117,17 @@ TODOS and Possible Features
 Contributors
 ------------
 
-* `Dustin Ingram <https://github.com/di>`_: support for multiple files
+* `Dustin Ingram <https://github.com/di>`_
 
 
 Changelog
 =========
+
+v0.4 (2017-03-30)
+-----------------
+
+* Support for a ``--printfilename`` option (`#8 <https://github.com/sk-/html-linter/pull/8>`_)
+* Support for Python 3.6 (`#12 <https://github.com/sk-/html-linter/pull/12>`_)
 
 v0.3 (2016-01-24)
 -----------------
