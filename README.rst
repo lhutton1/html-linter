@@ -91,7 +91,7 @@ You can install, upgrade or uninstall html-linter with these commands::
 Python Versions
 ---------------
 
-Python 2.7, 3.3, 3.4 and 3.5 are supported.
+Python 2.7, 3.3, 3.4, 3.5 and 3.6 are supported.
 
 Development
 -----------
