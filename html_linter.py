@@ -41,6 +41,7 @@ import io
 import os
 import re
 import sys
+import fnmatch
 
 import template_remover
 
@@ -1087,7 +1088,15 @@ def main(options):
 
     exclude = [_DISABLE_MAP[d] for d in disable if d in _DISABLE_MAP]
 
-    filenames = options.get('FILENAME', [])
+    filenames = []
+    
+    if options.get('--recursive'):
+        directory = options.get('DIRECTORY')
+        for root, dirnames, names in os.walk(directory):
+            filenames.extend([os.path.join(root, name) \
+                for name in names if name.endswith('.html')])
+    else:
+        filenames = options.get('FILENAME', [])
 
     results = False
     for filename in filenames:

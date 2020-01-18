@@ -26,6 +26,7 @@ This software is released under the Apache License. Copyright Deezer 2014.
 
 Usage:
   html5_lint.py [--disable=DISABLE] [--printfilename] FILENAME...
+  html5_lint.py [--disable=DISABLE] [--printfilename] [-r | --recursive] DIRECTORY
   html5_lint.py (-h | --help)
   html5_lint.py --version
 
@@ -40,6 +41,7 @@ Options:
                    boolean_attribute, invalid_attribute, void_zero,
                    invalid_handler, http_equiv, extra_whitespace.
   --printfilename  Include the filename when printing the results
+  -r --recursive   Specify a directory to lint .html files.
 
 """
 
